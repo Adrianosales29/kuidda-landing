@@ -6,14 +6,18 @@
 <title>KUIDDA — A vida do seu pet, para sempre</title>
 <meta name="description" content="Cada pet merece uma história completa de cuidado. KUIDDA organiza a jornada do seu animal e conecta você com quem cuida dele no mundo real.">
 
-<!-- Open Graph / WhatsApp Preview -->
+<!-- Segurança -->
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+<meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://kuidda-mvp.vercel.app; frame-ancestors 'none'">
+
+<!-- Open Graph -->
 <meta property="og:title" content="KUIDDA — A vida do seu pet organizada para sempre">
 <meta property="og:description" content="O pet no centro. O profissional reconhecido. O tutor conectado.">
 <meta property="og:image" content="https://kuidda.com.br/logo.png">
 <meta property="og:url" content="https://kuidda.com.br">
 <meta property="og:type" content="website">
-
-<!-- Twitter Preview -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="KUIDDA — A vida do seu pet organizada para sempre">
 <meta name="twitter:description" content="O pet no centro. O profissional reconhecido. O tutor conectado.">
@@ -59,7 +63,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;transition:all .3s}
 nav.scrolled{background:rgba(253,248,243,.94);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border);box-shadow:0 2px 20px rgba(44,33,24,.06)}
 .nav-inner{max-width:1100px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between;height:68px}
 .nav-brand{display:flex;align-items:center;gap:10px;text-decoration:none}
-.nav-brand img{height:38px;width:38px;border-radius:11px;object-fit:contain;transition:transform .3s}
+.nav-brand img{height:52px;width:52px;border-radius:11px;object-fit:contain;transition:transform .3s}
 .nav-brand:hover img{transform:rotate(-6deg) scale(1.1)}
 .nav-brand-name{font-family:'Comfortaa',cursive;font-size:20px;font-weight:700;color:var(--sage);letter-spacing:-.3px}
 .nav-links{display:flex;align-items:center;gap:4px;list-style:none}
@@ -167,24 +171,52 @@ nav.scrolled{background:rgba(253,248,243,.94);backdrop-filter:blur(20px);-webkit
 .how-title{font-size:15px;font-weight:800;color:var(--slate);margin-bottom:8px}
 .how-text{font-size:13px;color:var(--mid);line-height:1.6;max-width:200px}
 
-/* ── NETWORK ── */
+/* ── BRIDGE SECTION (tutor como ponte) ── */
+.bridge-section{background:var(--white);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.bridge-flow{display:flex;align-items:center;justify-content:center;gap:0;margin-top:56px;flex-wrap:wrap}
+.bridge-node{display:flex;flex-direction:column;align-items:center;text-align:center;padding:32px 28px;position:relative;flex:1;min-width:200px;max-width:280px}
+.bridge-icon{font-size:48px;margin-bottom:16px;line-height:1}
+.bridge-role{font-size:10px;font-weight:800;letter-spacing:1.6px;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+.bridge-title{font-family:'Comfortaa',cursive;font-size:17px;font-weight:700;color:var(--slate);margin-bottom:8px;line-height:1.2}
+.bridge-desc{font-size:13px;color:var(--mid);line-height:1.6;max-width:180px}
+.bridge-node.pet-node .bridge-icon-wrap{width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,#d4f0e6,#e8f7f1);border:3px solid var(--sage-mid);display:flex;align-items:center;justify-content:center;font-size:38px;margin:0 auto 16px;box-shadow:0 0 0 6px rgba(45,155,111,.1),0 8px 24px rgba(45,155,111,.2);animation:pulse 3s ease-in-out infinite}
+.bridge-node.pet-node .bridge-title{font-size:20px;color:var(--sage)}
+.bridge-arrow{display:flex;flex-direction:column;align-items:center;padding:0 8px;color:var(--sage-mid);font-size:22px;flex-shrink:0;margin-top:-16px}
+.bridge-arrow-label{font-size:10px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--muted);margin-top:6px;white-space:nowrap}
+.bridge-connector{width:2px;height:40px;background:linear-gradient(180deg,var(--sage-mid),transparent);display:none}
+
+/* ── NETWORK (profissional como consequência) ── */
 .net-bg{background:linear-gradient(160deg,#f0fdf7 0%,var(--cream) 65%);border-top:1px solid var(--sage-mid);border-bottom:1px solid var(--sage-mid)}
-.net-layout{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
 .btn-section{display:inline-flex;align-items:center;gap:8px;margin-top:32px;padding:14px 28px;border-radius:14px;border:none;background:linear-gradient(135deg,var(--sage),var(--sage-dark));font-family:'Nunito',sans-serif;font-size:15px;font-weight:800;color:#fff;text-decoration:none;box-shadow:0 6px 20px rgba(45,155,111,.3);transition:all .22s}
 .btn-section:hover{transform:translateY(-3px);box-shadow:0 12px 28px rgba(45,155,111,.42)}
-.pro-list{display:flex;flex-direction:column;gap:12px}
-.pro-card{display:flex;align-items:center;gap:14px;padding:15px 18px;background:var(--white);border-radius:16px;border:1.5px solid var(--border);box-shadow:0 2px 8px rgba(44,33,24,.05);transition:all .22s}
-.pro-card:hover{border-color:var(--sage-mid);transform:translateX(5px);box-shadow:0 8px 24px rgba(44,33,24,.09)}
-.pro-av{width:44px;height:44px;border-radius:50%;background:var(--sage-dim);border:2px solid var(--sage-mid);display:flex;align-items:center;justify-content:center;font-size:21px;flex-shrink:0}
-.pro-name{font-size:14px;font-weight:800;color:var(--slate)}
-.pro-spec{font-size:11px;color:var(--sage);font-weight:700;margin-top:2px}
-.pro-rating{font-size:11px;color:var(--muted);font-weight:600;margin-top:3px}
-.pro-dot{margin-left:auto;width:9px;height:9px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 3px rgba(34,197,94,.2);flex-shrink:0}
-.pro-add{display:flex;align-items:center;gap:14px;padding:15px 18px;border-radius:16px;border:1.5px dashed var(--border2);background:var(--cream2);transition:all .2s;cursor:pointer}
-.pro-add:hover{border-color:var(--sage-mid);background:var(--sage-dim)}
-.pro-add-ico{width:44px;height:44px;border-radius:50%;background:var(--warm);border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:20px}
-.pro-add-tit{font-size:14px;font-weight:700;color:var(--mid)}
-.pro-add-sub{font-size:11px;color:var(--muted);margin-top:2px;font-weight:600}
+
+/* profissional cards */
+.pro-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:40px}
+.pro-card-v2{background:var(--white);border:1.5px solid var(--border);border-radius:20px;padding:22px;display:flex;flex-direction:column;gap:12px;transition:all .22s;position:relative;overflow:hidden}
+.pro-card-v2::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--sage),var(--sage-mid),transparent);opacity:0;transition:opacity .3s}
+.pro-card-v2:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(44,33,24,.1);border-color:var(--sage-mid)}
+.pro-card-v2:hover::before{opacity:1}
+.pro-card-top{display:flex;align-items:center;gap:12px}
+.pro-av-v2{width:46px;height:46px;border-radius:50%;background:var(--sage-dim);border:2px solid var(--sage-mid);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.pro-info{flex:1}
+.pro-name-v2{font-size:14px;font-weight:800;color:var(--slate);line-height:1.2}
+.pro-spec-v2{font-size:11px;color:var(--sage);font-weight:700;margin-top:2px}
+.pro-location{font-size:11px;color:var(--muted);font-weight:600;margin-top:2px;display:flex;align-items:center;gap:4px}
+.pro-status{display:flex;align-items:center;gap:6px;padding:6px 12px;border-radius:99px;background:var(--sage-dim);border:1px solid var(--sage-mid);width:fit-content;font-size:11px;font-weight:800;color:var(--sage)}
+.pro-status-dot{width:7px;height:7px;border-radius:50%;background:#22c55e;box-shadow:0 0 5px #22c55e;flex-shrink:0}
+.pro-tag-row{display:flex;flex-wrap:wrap;gap:6px}
+.pro-tag{padding:4px 10px;border-radius:99px;background:var(--warm);border:1px solid var(--border);font-size:11px;font-weight:700;color:var(--mid)}
+
+/* indicacao visual */
+.indication-banner{background:linear-gradient(135deg,var(--sage-dim),#f0fdf7);border:1.5px solid var(--sage-mid);border-radius:18px;padding:24px 28px;margin-top:40px;display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.indication-icon{font-size:36px;flex-shrink:0}
+.indication-text{flex:1;min-width:200px}
+.indication-title{font-family:'Comfortaa',cursive;font-size:17px;font-weight:700;color:var(--slate);margin-bottom:4px}
+.indication-sub{font-size:13px;color:var(--mid);line-height:1.6}
+.indication-proof{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.i-face{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;border:2px solid var(--white);margin-left:-8px;background:var(--sage-dim)}
+.i-face:first-child{margin-left:0}
+.i-count{font-size:13px;font-weight:800;color:var(--sage);margin-left:4px}
 
 /* ── TESTIMONIALS ── */
 .t-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;margin-top:52px}
@@ -204,7 +236,7 @@ nav.scrolled{background:rgba(253,248,243,.94);backdrop-filter:blur(20px);-webkit
 .co1{width:500px;height:500px;top:-140px;left:50%;transform:translateX(-50%);background:radial-gradient(circle,rgba(255,255,255,.06),transparent 65%)}
 .co2{width:300px;height:300px;bottom:-80px;right:8%;background:radial-gradient(circle,rgba(45,155,111,.14),transparent 65%)}
 .cta-logo{display:flex;justify-content:center;margin-bottom:32px}
-.cta-logo img{height:72px;width:72px;border-radius:20px;object-fit:contain;box-shadow:0 12px 36px rgba(0,0,0,.3),0 0 0 1px rgba(255,255,255,.1);transition:transform .3s}
+.cta-logo img{height:96px;width:96px;border-radius:20px;object-fit:contain;box-shadow:0 12px 36px rgba(0,0,0,.3),0 0 0 1px rgba(255,255,255,.1);transition:transform .3s}
 .cta-logo img:hover{transform:rotate(-5deg) scale(1.08)}
 .cta-h2{font-family:'Comfortaa',cursive;font-size:clamp(30px,5vw,54px);color:#fff;line-height:1.1;margin-bottom:20px;letter-spacing:-.5px;max-width:660px;margin-left:auto;margin-right:auto}
 .cta-sub{font-size:clamp(15px,1.8vw,19px);color:rgba(255,255,255,.65);max-width:480px;margin:0 auto 48px;line-height:1.7}
@@ -219,7 +251,7 @@ nav.scrolled{background:rgba(253,248,243,.94);backdrop-filter:blur(20px);-webkit
 footer{background:var(--white);border-top:1px solid var(--border);padding:52px 32px 40px}
 .foot-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px}
 .foot-brand-logo{display:flex;align-items:center;gap:10px;margin-bottom:12px}
-.foot-brand-logo img{height:38px;width:38px;border-radius:10px;object-fit:contain}
+.foot-brand-logo img{height:48px;width:48px;border-radius:10px;object-fit:contain}
 .foot-brand-name{font-family:'Comfortaa',cursive;font-size:17px;font-weight:700;color:var(--sage)}
 .foot-tagline{font-size:12px;color:var(--muted);font-weight:600}
 .fc-title{font-size:12px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;color:var(--slate);margin-bottom:16px}
@@ -228,20 +260,23 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:52px 3
 .fc-links a:hover{color:var(--sage)}
 .foot-bottom{max-width:1100px;margin:36px auto 0;padding-top:24px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px}
 .foot-copy{font-size:12px;color:var(--muted);font-weight:600}
-.foot-love{font-size:12px;color:var(--muted);font-weight:600}
 .foot-love span{color:var(--sage)}
+.foot-love{font-size:12px;color:var(--muted);font-weight:600}
 
 /* ── RESPONSIVE ── */
 @media(max-width:1000px){
   .w7,.w5,.w6,.w4{grid-column:span 6}
   .fb-l,.fb-r{display:none}
-  .net-layout{grid-template-columns:1fr;gap:40px}
   .foot-inner{grid-template-columns:1fr 1fr}
   .how-grid::before{display:none}
+  .bridge-arrow{display:none}
 }
 @media(max-width:680px){
   .container{padding:0 20px}
   .nav-links{display:none}
+  .btn-ghost{display:none}
+  .nav-inner{padding:0 16px;height:60px}
+  .btn-cta-nav{padding:8px 14px;font-size:13px}
   .hero-wrap{padding:100px 20px 60px}
   .w7,.w5,.w6,.w4,.w12{grid-column:span 12}
   .how-grid{grid-template-columns:1fr 1fr}
@@ -250,8 +285,17 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:52px 3
   .foot-inner{grid-template-columns:1fr}
   .foot-bottom{flex-direction:column;text-align:center}
   .cta-perks{gap:16px}
+  .hero-btns{flex-direction:column;align-items:center}
+  .btn-hp,.btn-hs{width:100%;max-width:340px;justify-content:center}
+  .bridge-flow{flex-direction:column;align-items:center}
+  .bridge-arrow{transform:rotate(90deg);margin:0}
+  .indication-banner{flex-direction:column;text-align:center}
+  .indication-proof{justify-content:center}
 }
-@media(max-width:400px){.how-grid{grid-template-columns:1fr}}
+@media(max-width:400px){
+  .how-grid{grid-template-columns:1fr}
+  .nav-brand-name{font-size:17px}
+}
 </style>
 </head>
 <body>
@@ -264,13 +308,13 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:52px 3
       <span class="nav-brand-name">KUIDDA</span>
     </a>
     <ul class="nav-links">
-      <li><a href="#features">Funcionalidades</a></li>
+      <li><a href="#features">Para o pet</a></li>
       <li><a href="#how">Como funciona</a></li>
       <li><a href="#network">Para profissionais</a></li>
     </ul>
     <div class="nav-right">
-      <a class="btn-ghost"   href="https://kuidda-mvp.vercel.app/login">Entrar</a>
-      <a class="btn-cta-nav" href="https://kuidda-mvp.vercel.app/login">Começar grátis →</a>
+      <a class="btn-ghost" href="https://kuidda-mvp.vercel.app/login" target="_blank" rel="noopener noreferrer">Entrar</a>
+      <a class="btn-cta-nav" href="https://kuidda-mvp.vercel.app/login" target="_blank" rel="noopener noreferrer">Começar grátis →</a>
     </div>
   </div>
 </nav>
@@ -279,18 +323,18 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:52px 3
 <section class="hero-wrap">
   <div class="glow g1"></div><div class="glow g2"></div><div class="glow g3"></div>
 
-  <div class="hero-badge anim-up d1"><span class="badge-dot"></span>No KUIDDA, a gente cuida melhor juntos</div>
+  <div class="hero-badge anim-up d1"><span class="badge-dot"></span>O pet no centro. Sempre.</div>
 
   <h1 class="hero-h1 anim-up d2">
-    A vida do seu pet<br><span class="sage">organizada para sempre</span>
+    Cada pet merece<br><span class="sage">uma história completa</span>
   </h1>
 
   <p class="hero-sub anim-up d3">
-    O pet no centro. O profissional que cuida, reconhecido. E o tutor conectado a quem realmente faz a diferença.
+    Você ama. O KUIDDA guarda cada detalhe — vacinas, consultas, quem cuidou — para que nada se perca nunca.
   </p>
 
   <div class="hero-btns anim-up d4">
-    <a class="btn-hp" href="https://kuidda-mvp.vercel.app/login">🐾&nbsp; Criar conta gratuitamente</a>
+    <a class="btn-hp" href="https://kuidda-mvp.vercel.app/login" target="_blank" rel="noopener noreferrer">🐾&nbsp; Criar conta gratuitamente</a>
     <a class="btn-hs" href="#how">Como funciona →</a>
   </div>
 
@@ -336,24 +380,23 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:52px 3
   </div>
 </div>
 
-<!-- BENTO FEATURES -->
+<!-- BENTO FEATURES (foco no pet) -->
 <section class="section" id="features">
   <div class="container">
     <div style="text-align:center;margin-bottom:56px">
-      <span class="eyebrow">Funcionalidades</span>
-      <h2 class="section-h2">Tudo que o pet precisa,<br>num único lugar</h2>
-      <p class="section-p" style="margin-top:14px;max-width:500px;margin-left:auto;margin-right:auto;text-align:center">Simples para o tutor. Completo para o pet.</p>
+      <span class="eyebrow">Para o seu pet</span>
+      <h2 class="section-h2">Tudo que ele precisa,<br>guardado para sempre</h2>
+      <p class="section-p" style="margin-top:14px;max-width:500px;margin-left:auto;margin-right:auto;text-align:center">A vida do pet é a prioridade. O tutor conecta. O profissional cuida.</p>
     </div>
     <div class="bento-grid">
 
-      <!-- Prontuário grande -->
       <div class="bc w7 anim-up d1">
         <div style="display:flex;gap:24px;flex-wrap:wrap;align-items:flex-start">
           <div style="flex:1;min-width:180px">
             <div class="bc-ico">📋</div>
-            <div class="bc-lbl">Prontuário</div>
-            <div class="bc-tit">Histórico completo da vida do pet</div>
-            <div class="bc-txt">Vacinas, consultas, exames e medicamentos registrados com data, profissional e nível de verificação.</div>
+            <div class="bc-lbl">Prontuário do pet</div>
+            <div class="bc-tit">A história completa em um lugar só</div>
+            <div class="bc-txt">Vacinas, consultas, exames e medicamentos — tudo registrado com data, quem cuidou e comprovação.</div>
           </div>
           <div style="flex:1;min-width:160px">
             <div class="sbar-wrap">
@@ -366,12 +409,11 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:52px 3
         </div>
       </div>
 
-      <!-- Score -->
       <div class="bc w5 bc-sage anim-up d1">
-        <div class="bc-ico" style="background:rgba(45,155,111,.15);border-color:var(--sage-mid)">🏥</div>
-        <div class="bc-lbl">Saúde geral</div>
-        <div class="bc-tit">Score de saúde em tempo real</div>
-        <div class="bc-txt">Um indicador vivo do bem-estar do pet, atualizado a cada cuidado registrado.</div>
+        <div class="bc-ico" style="background:rgba(45,155,111,.15);border-color:var(--sage-mid)">💚</div>
+        <div class="bc-lbl">Saúde em tempo real</div>
+        <div class="bc-tit">Você sabe como ele está agora</div>
+        <div class="bc-txt">Um score vivo que sobe a cada cuidado registrado. O pet no centro, sempre visível.</div>
         <div style="display:flex;align-items:flex-end;gap:6px;margin-top:16px">
           <span style="font-family:'Comfortaa',cursive;font-size:54px;font-weight:700;color:var(--sage);line-height:1">82</span>
           <span style="font-size:20px;font-weight:700;color:var(--sage-mid);margin-bottom:8px">%</span>
@@ -379,32 +421,29 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:52px 3
         </div>
       </div>
 
-      <!-- Alertas -->
       <div class="bc w6 bc-amber anim-up d2">
         <div class="bc-ico" style="background:#fef3c7;border-color:#fcd34d">🔔</div>
-        <div class="bc-lbl">Alertas inteligentes</div>
-        <div class="bc-tit">Saiba antes que vire problema</div>
-        <div class="bc-txt">Receba sinais quando o pet está há muito tempo sem consulta, com vacina atrasada ou medicamento vencido. Antecipe o cuidado.</div>
+        <div class="bc-lbl">Alertas do pet</div>
+        <div class="bc-tit">O pet avisa antes de precisar</div>
+        <div class="bc-txt">Vacina atrasada, consulta esquecida, medicamento vencido. O KUIDDA lembra por você — antes do problema.</div>
       </div>
 
-      <!-- Transferência -->
       <div class="bc w6 bc-dark anim-up d2">
-        <div class="bc-lbl">Transferência de tutela</div>
+        <div class="bc-lbl">História que não se perde</div>
         <div class="bc-tit">O histórico vai junto com o pet</div>
-        <div class="bc-txt">Se o pet mudar de lar, nenhuma informação é perdida. A história continua.</div>
+        <div class="bc-txt">Se o pet mudar de lar ou de veterinário, toda a história continua. Nada é perdido.</div>
         <div class="tsteps">
-          <div class="tstep">🏠&nbsp; Tutor atual<span class="tstep-b">Ativo</span></div>
-          <div class="tstep">🔄&nbsp; Transferência<span class="tstep-b">Seguro</span></div>
-          <div class="tstep">🏡&nbsp; Novo tutor<span class="tstep-b">Histórico completo</span></div>
+          <div class="tstep">🐾&nbsp; Prontuário criado<span class="tstep-b">Seguro</span></div>
+          <div class="tstep">🔄&nbsp; Transferência de lar<span class="tstep-b">Completo</span></div>
+          <div class="tstep">🏡&nbsp; Novo tutor recebe tudo<span class="tstep-b">Preservado</span></div>
         </div>
       </div>
 
-      <!-- Rede local -->
       <div class="bc w4 bc-sage anim-up d3">
         <div class="bc-ico" style="background:rgba(45,155,111,.15);border-color:var(--sage-mid)">📍</div>
-        <div class="bc-lbl">Rede local</div>
-        <div class="bc-tit">Profissionais perto de você</div>
-        <div class="bc-txt">Clínicas, petshops e cuidadores do seu bairro com indicações reais.</div>
+        <div class="bc-lbl">Cuidado de bairro</div>
+        <div class="bc-tit">Quem cuida perto de você</div>
+        <div class="bc-txt">Clínicas, petshops e cuidadores do seu bairro — indicados por tutores reais.</div>
         <div class="ndots">
           <span class="ndot"><span class="ndot-p"></span>Veterinário</span>
           <span class="ndot"><span class="ndot-p"></span>Petshop</span>
@@ -412,126 +451,162 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:52px 3
         </div>
       </div>
 
-      <!-- Memória -->
       <div class="bc w4 bc-rose anim-up d3" style="text-align:center">
         <div style="font-size:52px;animation:heartbeat 3.5s ease-in-out infinite;margin-bottom:14px">🕊️</div>
         <div class="bc-lbl" style="color:var(--mid)">Memória eterna</div>
         <div class="bc-tit">A história fica para sempre</div>
-        <div class="bc-txt">Quando chegar a hora, o prontuário é preservado como homenagem completa à vida do pet.</div>
+        <div class="bc-txt">Quando chegar a hora, o prontuário é preservado como homenagem à vida do pet.</div>
       </div>
 
-      <!-- Confiança verificada -->
       <div class="bc w4 anim-up d3">
         <div class="bc-ico">🛡️</div>
-        <div class="bc-lbl">Confiança verificada</div>
-        <div class="bc-tit">Do informado ao verificado</div>
-        <div class="bc-txt">Cada registro tem um nível: 🤍 informado, 📸 com evidência, ✅ verificado pelo profissional.</div>
+        <div class="bc-lbl">Registro verificado</div>
+        <div class="bc-tit">Do amor ao comprovado</div>
+        <div class="bc-txt">Cada cuidado tem um nível: 🤍 informado pelo tutor, 📸 com evidência, ✅ confirmado pelo profissional.</div>
       </div>
 
     </div>
   </div>
 </section>
 
-<!-- HOW IT WORKS -->
+<!-- COMO FUNCIONA: pet → tutor → profissional -->
 <section class="how-section section" id="how">
   <div class="container">
     <div style="text-align:center">
       <span class="eyebrow">Como funciona</span>
-      <h2 class="section-h2">Quatro passos para cuidar melhor</h2>
+      <h2 class="section-h2">O pet no centro.<br>Você conecta. O bairro cuida.</h2>
+      <p class="section-p" style="margin-top:14px;max-width:520px;margin-left:auto;margin-right:auto;text-align:center">Três papéis simples. Uma relação que faz sentido.</p>
     </div>
-    <div class="how-grid">
+    <div class="how-grid" style="margin-top:56px">
       <div class="how-step anim-up d1">
-        <div class="how-circle">🐣</div>
-        <div class="how-num">Passo 01</div>
-        <div class="how-title">Cadastre seu pet</div>
-        <div class="how-text">Espécie, raça, data de nascimento e foto. Em segundos o prontuário está criado.</div>
+        <div class="how-circle">🐾</div>
+        <div class="how-num">O centro</div>
+        <div class="how-title">O pet</div>
+        <div class="how-text">Tudo começa e termina nele. A vida do pet é o único propósito do KUIDDA.</div>
       </div>
       <div class="how-step anim-up d2">
-        <div class="how-circle">💉</div>
-        <div class="how-num">Passo 02</div>
-        <div class="how-title">Registre os cuidados</div>
-        <div class="how-text">Cada ação registrada fortalece o histórico e o score de saúde do pet.</div>
+        <div class="how-circle">🧡</div>
+        <div class="how-num">A ponte</div>
+        <div class="how-title">O tutor</div>
+        <div class="how-text">Você ama, registra e conecta. A responsabilidade fica mais leve quando está organizada.</div>
       </div>
       <div class="how-step anim-up d3">
-        <div class="how-circle">🤝</div>
-        <div class="how-num">Passo 03</div>
-        <div class="how-title">Conecte com quem cuida</div>
-        <div class="how-text">Indique profissionais e contribua para a rede de confiança do seu bairro.</div>
+        <div class="how-circle">🏥</div>
+        <div class="how-num">O cuidado</div>
+        <div class="how-title">O profissional</div>
+        <div class="how-text">Veterinários, petshops e cuidadores do seu bairro — chegam quando o pet precisa.</div>
       </div>
       <div class="how-step anim-up d4">
         <div class="how-circle">🕊️</div>
         <div class="how-num">Para sempre</div>
-        <div class="how-title">História guardada</div>
-        <div class="how-text">O prontuário é eterno. Para o próximo tutor, veterinário ou qualquer emergência.</div>
+        <div class="how-title">A história</div>
+        <div class="how-text">Cada cuidado registrado vira parte da vida do pet — guardada para sempre.</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- NETWORK — FOCO NO PROFISSIONAL LIBERAL -->
+<!-- PROFISSIONAL DE BAIRRO (consequência, não protagonista) -->
 <section class="net-bg section" id="network">
   <div class="container">
-
-    <!-- Título central: profissional é o protagonista -->
-    <div style="text-align:center;margin-bottom:64px;">
-      <span class="eyebrow">Para profissionais de cuidado animal</span>
-      <h2 class="section-h2">Você cuida do pet.<br><span style="color:var(--sage)">O KUIDDA cuida da sua reputação.</span></h2>
-      <p class="section-p" style="margin-top:16px;max-width:580px;margin-left:auto;margin-right:auto;text-align:center;">
-        Veterinários, petshops, tosadores, cuidadores independentes — você é o coração da rede.
-        Cada atendimento registrado constrói o seu perfil e leva novos tutores até você.
+    <div style="text-align:center;margin-bottom:52px">
+      <span class="eyebrow">Profissionais de bairro</span>
+      <h2 class="section-h2">Quem cuida de verdade<br><span style="color:var(--sage)">merece ser encontrado.</span></h2>
+      <p class="section-p" style="margin-top:16px;max-width:560px;margin-left:auto;margin-right:auto;text-align:center">
+        O tutor indica quem já cuidou do pet. O profissional de bairro cresce pela confiança real — não por anúncio.
       </p>
     </div>
 
-    <!-- Grid de benefícios para o profissional -->
-    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-bottom:56px;">
-
-      <div class="bc bc-sage" style="text-align:center;padding:36px 28px;">
-        <div style="font-size:40px;margin-bottom:16px;">🏆</div>
-        <div class="bc-lbl">Reputação real</div>
-        <div class="bc-tit" style="font-size:17px;">Indicações de quem você já atendeu</div>
-        <div class="bc-txt" style="margin-top:8px;">Tutores satisfeitos indicam você diretamente no prontuário do pet. Cada indicação é uma prova real do seu trabalho.</div>
+    <!-- Cards de profissionais reais -->
+    <div class="pro-grid">
+      <div class="pro-card-v2 anim-up d1">
+        <div class="pro-card-top">
+          <div class="pro-av-v2">👩‍⚕️</div>
+          <div class="pro-info">
+            <div class="pro-name-v2">Dra. Camila Rocha</div>
+            <div class="pro-spec-v2">Médica Veterinária</div>
+            <div class="pro-location">📍 Vila Madalena · SP</div>
+          </div>
+        </div>
+        <div class="pro-status"><span class="pro-status-dot"></span>Disponível hoje</div>
+        <div class="pro-tag-row">
+          <span class="pro-tag">Clínica geral</span>
+          <span class="pro-tag">Vacinação</span>
+          <span class="pro-tag">Emergência</span>
+        </div>
       </div>
 
-      <div class="bc" style="text-align:center;padding:36px 28px;">
-        <div style="font-size:40px;margin-bottom:16px;">📍</div>
-        <div class="bc-lbl">Visibilidade local</div>
-        <div class="bc-tit" style="font-size:17px;">Apareça para tutores do seu bairro</div>
-        <div class="bc-txt" style="margin-top:8px;">Quando um tutor busca cuidado para o pet, você aparece. Sem anúncios pagos — só pelo histórico de cuidado real que você gerou.</div>
+      <div class="pro-card-v2 anim-up d2">
+        <div class="pro-card-top">
+          <div class="pro-av-v2">✂️</div>
+          <div class="pro-info">
+            <div class="pro-name-v2">João Petshop</div>
+            <div class="pro-spec-v2">Banho, Tosa & Petshop</div>
+            <div class="pro-location">📍 Pinheiros · SP</div>
+          </div>
+        </div>
+        <div class="pro-status"><span class="pro-status-dot"></span>Disponível hoje</div>
+        <div class="pro-tag-row">
+          <span class="pro-tag">Banho & Tosa</span>
+          <span class="pro-tag">Acessórios</span>
+          <span class="pro-tag">Ração</span>
+        </div>
       </div>
 
-      <div class="bc bc-amber" style="text-align:center;padding:36px 28px;">
-        <div style="font-size:40px;margin-bottom:16px;">🔄</div>
-        <div class="bc-lbl">Clientes recorrentes</div>
-        <div class="bc-tit" style="font-size:17px;">O pet lembra. O tutor volta.</div>
-        <div class="bc-txt" style="margin-top:8px;">O prontuário mostra quando o pet precisa de consulta, vacina ou retorno. E quem aparece como profissional de confiança? Você.</div>
+      <div class="pro-card-v2 anim-up d3">
+        <div class="pro-card-top">
+          <div class="pro-av-v2">🏠</div>
+          <div class="pro-info">
+            <div class="pro-name-v2">Ana Cuidadora</div>
+            <div class="pro-spec-v2">Cuidadora domiciliar</div>
+            <div class="pro-location">📍 Moema · SP</div>
+          </div>
+        </div>
+        <div class="pro-status"><span class="pro-status-dot"></span>Disponível hoje</div>
+        <div class="pro-tag-row">
+          <span class="pro-tag">Dog sitting</span>
+          <span class="pro-tag">Passeio</span>
+          <span class="pro-tag">Hotel pet</span>
+        </div>
       </div>
-
     </div>
 
-    <!-- Linha divisória com CTA duplo -->
-    <div style="display:grid;grid-template-columns:1fr 1px 1fr;gap:40px;align-items:center;padding:40px 0;border-top:1.5px solid var(--border);border-bottom:1.5px solid var(--border);">
-
-      <div style="text-align:center;padding:0 20px;">
-        <div style="font-size:13px;font-weight:800;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-bottom:12px;">Para profissionais</div>
-        <div style="font-family:'Comfortaa',cursive;font-size:20px;color:var(--slate);font-weight:700;margin-bottom:10px;line-height:1.3;">Cadastre seu perfil e seja encontrado por quem já te conhece</div>
-        <a class="btn-section" style="margin-top:0;" href="https://kuidda-mvp.vercel.app/login">Quero ser encontrado →</a>
+    <!-- Banner de indicação -->
+    <div class="indication-banner anim-up d4">
+      <div class="indication-icon">🤝</div>
+      <div class="indication-text">
+        <div class="indication-title">Indicação real de quem já foi atendido</div>
+        <div class="indication-sub">Quando um tutor registra um cuidado no prontuário do pet, ele indica o profissional automaticamente. Sem anúncios. Só confiança.</div>
       </div>
+      <div class="indication-proof">
+        <div class="i-face">🐱</div>
+        <div class="i-face">🐕</div>
+        <div class="i-face">🐩</div>
+        <div class="i-face">🐈</div>
+        <span class="i-count">+240 indicações esta semana</span>
+      </div>
+    </div>
 
-      <div style="width:1px;background:var(--border);align-self:stretch;"></div>
-
+    <!-- CTA duplo profissional/tutor -->
+    <div style="display:grid;grid-template-columns:1fr 1px 1fr;gap:40px;align-items:center;padding:40px 0;border-top:1.5px solid var(--border);border-bottom:1.5px solid var(--border);margin-top:48px;">
       <div style="text-align:center;padding:0 20px;">
-        <div style="font-size:13px;font-weight:800;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-bottom:12px;">Para tutores</div>
-        <div style="font-family:'Comfortaa',cursive;font-size:20px;color:var(--slate);font-weight:700;margin-bottom:10px;line-height:1.3;">Indique quem cuidou do seu pet e fortaleça a rede do seu bairro</div>
-        <a href="https://kuidda-mvp.vercel.app/login" style="display:inline-flex;align-items:center;gap:8px;margin-top:0;padding:14px 28px;border-radius:14px;border:1.5px solid var(--sage-mid);background:var(--sage-dim);font-family:'Nunito',sans-serif;font-size:15px;font-weight:800;color:var(--sage);text-decoration:none;transition:all .22s;">
+        <div style="font-size:13px;font-weight:800;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-bottom:12px;">Você é profissional?</div>
+        <div style="font-family:'Comfortaa',cursive;font-size:18px;color:var(--slate);font-weight:700;margin-bottom:10px;line-height:1.3;">Seja encontrado por quem já te conhece e confia</div>
+        <a class="btn-section" style="margin-top:0;" href="https://kuidda-mvp.vercel.app/login" target="_blank" rel="noopener noreferrer">Quero ser encontrado →</a>
+      </div>
+      <div style="width:1px;background:var(--border);align-self:stretch;"></div>
+      <div style="text-align:center;padding:0 20px;">
+        <div style="font-size:13px;font-weight:800;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-bottom:12px;">Você é tutor?</div>
+        <div style="font-family:'Comfortaa',cursive;font-size:18px;color:var(--slate);font-weight:700;margin-bottom:10px;line-height:1.3;">Indique quem cuida do seu pet e fortaleça o seu bairro</div>
+        <a href="https://kuidda-mvp.vercel.app/login" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:14px;border:1.5px solid var(--sage-mid);background:var(--sage-dim);font-family:'Nunito',sans-serif;font-size:15px;font-weight:800;color:var(--sage);text-decoration:none;transition:all .22s;">
           Indicar um profissional →
         </a>
       </div>
-
     </div>
 
-    <!-- Tipos de profissionais aceitos -->
-    <div style="margin-top:48px;text-align:center;">
-      <p style="font-size:12px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted);margin-bottom:20px;">Quem já faz parte da rede</p>
+    <!-- Tipos de profissionais -->
+    <div style="margin-top:40px;text-align:center;">
+      <p style="font-size:12px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase;color:var(--muted);margin-bottom:20px;">Quem faz parte da rede</p>
       <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:10px;">
         <span style="display:inline-flex;align-items:center;gap:7px;padding:8px 16px;border-radius:99px;background:var(--white);border:1.5px solid var(--border);font-size:13px;font-weight:700;color:var(--mid);">👩‍⚕️ Médica Veterinária</span>
         <span style="display:inline-flex;align-items:center;gap:7px;padding:8px 16px;border-radius:99px;background:var(--white);border:1.5px solid var(--border);font-size:13px;font-weight:700;color:var(--mid);">🏪 Petshop de bairro</span>
@@ -539,7 +614,6 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:52px 3
         <span style="display:inline-flex;align-items:center;gap:7px;padding:8px 16px;border-radius:99px;background:var(--white);border:1.5px solid var(--border);font-size:13px;font-weight:700;color:var(--mid);">🏥 Clínica veterinária</span>
         <span style="display:inline-flex;align-items:center;gap:7px;padding:8px 16px;border-radius:99px;background:var(--white);border:1.5px solid var(--border);font-size:13px;font-weight:700;color:var(--mid);">🛁 Banho &amp; Tosa</span>
         <span style="display:inline-flex;align-items:center;gap:7px;padding:8px 16px;border-radius:99px;background:var(--white);border:1.5px solid var(--border);font-size:13px;font-weight:700;color:var(--mid);">🏠 Cuidador domiciliar</span>
-        <span style="display:inline-flex;align-items:center;gap:7px;padding:8px 16px;border-radius:99px;background:var(--white);border:1.5px solid var(--border);font-size:13px;font-weight:700;color:var(--mid);">🦷 Odontologia veterinária</span>
         <span style="display:inline-flex;align-items:center;gap:7px;padding:8px 16px;border-radius:99px;background:var(--sage-dim);border:1.5px solid var(--sage-mid);font-size:13px;font-weight:700;color:var(--sage);">+ muito mais</span>
       </div>
     </div>
@@ -556,21 +630,21 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:52px 3
     </div>
     <div class="t-grid">
       <div class="tcard anim-up d1">
-        <p class="tcard-text">"Finalmente tenho um lugar onde o histórico completo da Mel fica guardado. Cada consulta, cada vacina — tudo num clique. Já indiquei para todo mundo."</p>
+        <p class="tcard-text">"Finalmente tenho um lugar onde a história completa da Mel fica guardada. Cada consulta, cada vacina — tudo num clique. Já indiquei para todo mundo."</p>
         <div class="tcard-author">
           <div class="tcard-av" style="background:#e8f7f1;border:2px solid var(--sage-mid)">🐱</div>
           <div><div class="tcard-name">Tatiana M.</div><div class="tcard-sub">Tutora da Mel, gata persa · São Paulo</div><span class="tcard-stars">★★★★★</span></div>
         </div>
       </div>
       <div class="tcard anim-up d2">
-        <p class="tcard-text">"Tenho 6 pets no KUIDDA. Consigo ver o score de saúde de cada um e sei exatamente quem está precisando de atenção naquele dia."</p>
+        <p class="tcard-text">"Tenho 6 pets no KUIDDA. Consigo ver como cada um está e sei exatamente quem precisa de atenção naquele dia. O pet sempre no centro."</p>
         <div class="tcard-author">
           <div class="tcard-av" style="background:#eff6ff;border:2px solid #bfdbfe">🐕</div>
           <div><div class="tcard-name">Adriano S.</div><div class="tcard-sub">Tutor de 6 pets · Recife</div><span class="tcard-stars">★★★★★</span></div>
         </div>
       </div>
       <div class="tcard anim-up d3">
-        <p class="tcard-text">"Quando transferi a tutela do Rex para minha irmã, todo o prontuário foi junto. Ela não perdeu nada — nem a primeira vacina dele."</p>
+        <p class="tcard-text">"Quando transferi o Rex para minha irmã, todo o prontuário foi junto. Ela não perdeu nada — nem a primeira vacininha dele."</p>
         <div class="tcard-author">
           <div class="tcard-av" style="background:#fff1f4;border:2px solid #fda4af">🐩</div>
           <div><div class="tcard-name">Rosana C.</div><div class="tcard-sub">Tutora do Rex, poodle · Belo Horizonte</div><span class="tcard-stars">★★★★★</span></div>
@@ -586,8 +660,8 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:52px 3
   <div class="container" style="position:relative;z-index:2">
     <div class="cta-logo"><img src="logo.png" alt="KUIDDA"></div>
     <h2 class="cta-h2">O seu pet<br>merece ter uma história</h2>
-    <p class="cta-sub">Comece agora. Em menos de 2 minutos o prontuário do seu pet está criado — e a história guardada para sempre.</p>
-    <a class="btn-cta-w" href="https://kuidda-mvp.vercel.app/login">🐾 &nbsp;Criar conta gratuitamente</a>
+    <p class="cta-sub">Comece agora. Em menos de 2 minutos o prontuário está criado — e a história guardada para sempre.</p>
+    <a class="btn-cta-w" href="https://kuidda-mvp.vercel.app/login" target="_blank" rel="noopener noreferrer">🐾 &nbsp;Criar conta gratuitamente</a>
     <div class="cta-perks">
       <span class="cta-perk"><span class="cta-perk-dot">✦</span> Sem cartão de crédito</span>
       <span class="cta-perk"><span class="cta-perk-dot">✦</span> Sem limite de pets</span>
@@ -607,18 +681,18 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:52px 3
       <p class="foot-tagline">Juntos cuidamos melhor 🐾</p>
     </div>
     <div>
-      <div class="fc-title">Produto</div>
+      <div class="fc-title">Para o pet</div>
       <ul class="fc-links">
-        <li><a href="#features">Funcionalidades</a></li>
+        <li><a href="#features">Prontuário</a></li>
         <li><a href="#how">Como funciona</a></li>
-        <li><a href="#network">Para profissionais</a></li>
+        <li><a href="#network">Rede de bairro</a></li>
       </ul>
     </div>
     <div>
       <div class="fc-title">Acesso</div>
       <ul class="fc-links">
-        <li><a href="https://kuidda-mvp.vercel.app/login">Entrar</a></li>
-        <li><a href="https://kuidda-mvp.vercel.app/login">Criar conta</a></li>
+        <li><a href="https://kuidda-mvp.vercel.app/login" target="_blank" rel="noopener noreferrer">Entrar</a></li>
+        <li><a href="https://kuidda-mvp.vercel.app/login" target="_blank" rel="noopener noreferrer">Criar conta</a></li>
       </ul>
     </div>
     <div>
