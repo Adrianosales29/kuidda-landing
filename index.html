@@ -634,13 +634,13 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:52px 3
       </div>
       <p class="foot-tagline">O Sistema Operacional da Vida Pet.<br>Nós kuiddamos, você ama.</p>
       <div class="foot-social">
-        <a class="foot-social-btn" href="https://www.instagram.com/kuidda.pet" target="_blank" rel="noopener noreferrer">
+        <a class="foot-social-btn" href="https://www.instagram.com/kuidda.pet?igsh=NGY4NXV1ZGd2amNy" target="_blank" rel="noopener noreferrer">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
           @kuidda.pet
         </a>
-        <a class="foot-social-btn" href="/cdn-cgi/l/email-protection#f79c829e93939684828798858392b7909a969e9bd994989a">
+        <a class="foot-social-btn" href="mailto:kuiddasuporte@gmail.com">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          <span class="__cf_email__" data-cfemail="b7dcc2ded3d3d6c4c2c7d8c5c3d2f7d0dad6dedb99d4d8da">[email&#160;protected]</span>
+          kuiddasuporte@gmail.com
         </a>
       </div>
     </div>
@@ -662,8 +662,8 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:52px 3
     <div>
       <div class="fc-title">Contato</div>
       <ul class="fc-links">
-        <li><a href="/cdn-cgi/l/email-protection#c3a8b6aaa7a7a2b0b6b3acb1b7a683a4aea2aaafeda0acae"><span class="__cf_email__" data-cfemail="ec87998588888d9f999c839e9889ac8b818d8580c28f8381">[email&#160;protected]</span></a></li>
-        <li><a href="https://www.instagram.com/kuidda.pet" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+        <li><a href="mailto:kuiddasuporte@gmail.com">kuiddasuporte@gmail.com</a></li>
+        <li><a href="https://www.instagram.com/kuidda.pet?igsh=NGY4NXV1ZGd2amNy" target="_blank" rel="noopener noreferrer">Instagram</a></li>
         <li><a href="https://kuidda.com.br">kuidda.com.br</a></li>
       </ul>
     </div>
@@ -674,7 +674,7 @@ footer{background:var(--white);border-top:1px solid var(--border);padding:52px 3
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 const nav = document.getElementById("nav");
 window.addEventListener("scroll", () => {
   nav.classList.toggle("scrolled", window.scrollY > 20);
@@ -684,11 +684,12 @@ const io = new IntersectionObserver((entries) => {
   entries.forEach(e => {
     if (e.isIntersecting) {
       e.target.style.animationPlayState = "running";
-      io.unobserve(e);
+      io.unobserve(e.target);
     }
   });
 }, { threshold: 0.1 });
 document.querySelectorAll(".anim-up, .anim-fade").forEach(el => {
+  if (el.closest(".hero-wrap")) return;
   el.style.animationPlayState = "paused";
   io.observe(el);
 });
